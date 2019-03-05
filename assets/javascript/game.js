@@ -3,37 +3,47 @@ let losses = 0;
 let wins = 0; 
 let randomNum = 0;
 
-
 $(".crystal").on("click",function(){ 
-    if(score < randomNum){
-        updateScore();
-    }else if(score === randomNum){   
+    score += parseInt($(this).attr("value"));
+    $(".score").text(score); 
+    if(score === randomNum){
         wins++;
-        $(".win-num").text(wins);
-        alert("you won");
-        reset();
-    }else{
+        score = 0;
+        initialize();
+    }else if(score > randomNum){
         losses++;
-        $(".loss-num").text(losses);
-        alert("you lost");
-        reset();
+        score = 0;
+        initialize();
     }
 });
 
-function updateScore(){
-    score += Math.floor((Math.random() * 12) + 1);
-    $(".score").text(score);     
-}
 
-function reset(){
+// get new crystal numbers - new random number - fire render 
+function initialize(){
+    // sets to number betwee 19-120
     randomNum = Math.floor((Math.random() * 120) + 19);
-    $(".num").text(randomNum);
-    score = 0;
-    $(".score").text(score);
-   
+    // sets each crystal to a unique random value 1-12
+    $("#crystal1").attr("value",randomCrystalNum());
+    $("#crystal2").attr("value",randomCrystalNum());
+    $("#crystal3").attr("value",randomCrystalNum());
+    $("#crystal4").attr("value",randomCrystalNum());
+    render();        
 }
 
-reset();
+// update random number wins and loses 
+function render(){
+    $(".num").text(randomNum);
+    $(".win-num").text(wins);
+    $(".loss-num").text(losses); 
+    $(".score").text(score);  
+}
+
+function randomCrystalNum(){
+    return Math.floor((Math.random() * 12) + 1);
+}
+
+initialize();
+
 
 
 

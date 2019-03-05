@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crystal Mystery</title>
-    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">    <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
@@ -17,16 +17,19 @@
     <div class="instructions">
         <ul>
             <li>You will be given a number at the start of the game</li>
-            <li>There are four crystals below. </li>  
             <li>By clicking on a crystal you will add a specific amount of points to your total score</li> 
-            <li>You win the game by matching the total score to the random number</li>
-            <li>you lose the game if your total score goes above the random number</li> 
+            <li>You win the game by matching the total score to the random number, you lose the game if your total score goes above the random number</li>
             <li>The value of each crystal is hidden from you until you click on it</li>
             <li>Each time when the game starts, the game will change the values of each crystal.</li>
         </ul>
     </div>
 
     <div class="game-top">
+
+        <div class="total-score">
+            <p class="score-header">Total score</p>
+            <p class="score"></p>
+        </div>
         <div class="random-num">
             <p>Random Number</p>
             <p class="num"></p>
@@ -39,17 +42,13 @@
     </div>
 
     <div class="crystals">
-        <div class="crystal"><img src="./assets/images/crystal-1.svg" alt=""></div>
-        <div class="crystal"><img src="./assets/images/crystal-2.svg" alt=""></div>
-        <div class="crystal"><img src="./assets/images/crystal-3.svg" alt=""></div>
-        <div class="crystal"><img src="./assets/images/crystal-4.svg" alt=""></div>
-
+        <div class="crystal" id="crystal1" value="0"><img src="./assets/images/crystal-1.svg" alt=""></div>
+        <div class="crystal" id="crystal2" value="0"><img src="./assets/images/crystal-2.svg" alt=""></div>
+        <div class="crystal" id="crystal3" value ="0"><img src="./assets/images/crystal-3.svg" alt=""></div>
+        <div class="crystal" id="crystal4" value="0"><img src="./assets/images/crystal-4.svg" alt=""></div>
     </div>
 
-    <div class="total-score">
-        <p class="score-header">Your total score is:</p>
-        <p class="score"></p>
-    </div>
+ 
 </div>
       <!-- jQuery JS -->
 <script src="https://code.jquery.com/jquery.js"></script>
