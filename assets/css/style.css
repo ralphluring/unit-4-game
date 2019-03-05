@@ -1,0 +1,43 @@
+body{
+    background-color:gold;
+}
+
+.container{
+    border:1px solid black;
+    display:grid;
+    justify-items: center;
+}
+
+header {
+    text-align: center;
+}
+
+.instructions{
+   display: flex;
+   justify-content: center;
+}
+
+.game-top{
+display: flex;
+justify-content: space-around;
+}
+
+.random-num{
+margin: 30px;
+background-color:grey;
+text-align: center;
+padding:1rem;
+}
+
+.win-loss{
+    background-color: azure;
+}
+
+.crystals{
+    display:grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 60%;
+  
+    
+}
